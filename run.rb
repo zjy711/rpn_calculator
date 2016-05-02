@@ -6,12 +6,14 @@ class Run
 
     calculate = Calculator.new
 
-    input = nil
+    input = ''
 
-    while input != 'q' do
+    while input != 'q' && !input.nil? do
       print "> "
-      input = gets.chomp.strip
-      puts calculate.execute(input)
+
+      user_input = gets
+      input = user_input.nil? ? nil : user_input.chomp.strip
+      puts calculate.execute(input) unless input.nil?
     end
   end
 

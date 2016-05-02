@@ -44,6 +44,14 @@ RSpec.describe Run do
         subject.run
         expect(@calculator).not_to have_received(:execute).with('123')
       end
+
+      it 'if user hits ctrl D to exit' do
+        allow(@calculator).to receive(:execute).with(nil)
+        allow(subject).to receive(:gets).and_return(nil, '123')
+
+        subject.run
+        expect(@calculator).not_to have_received(:execute).with('123')
+      end
     end
   end
 end
