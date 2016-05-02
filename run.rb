@@ -18,7 +18,7 @@ class Run
   end
 
   def print_instructions
-    puts "Welcome to the RPN Calculator! At any time, please type 'q' to exit."
+    puts "Welcome to the RPN Calculator! At any time, please type 'q' or press CTRL+D to exit."
     puts "Have Fun!"
   end
 end
